@@ -5,7 +5,7 @@ def fast_squaring(n):
     x.reverse() # перевернутый список
     y = [0 for i in range (2 * k)] # 1. пустой список y
 
-    for i in range(k): # 2
+    for i in range(k): # 2 
         uv = y[2 * i] + x[i] * x[i] # 2.1
         c = 0
         u = uv // 10
