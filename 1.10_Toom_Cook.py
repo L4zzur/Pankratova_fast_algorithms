@@ -17,7 +17,7 @@ def pres(a):
 def Toom_Cook(u, v):
     if len(str(u)) != len(str(v)):
         print('Числа должны быть одинаковой длины!')
-        return 0
+        exit
     
     r = len(str(u))
     w = []
@@ -45,17 +45,17 @@ def Toom_Cook(u, v):
     c = []
     for i in range(len(delta)):
         c.append(delta[i][0])
-    
-    print(c)
 
     result = 0
-    for i in range(len(c), 0):#Сразу считаем значение в x = 10 для получения числа
-        k = len(c) - i - 2
+    for i in range(len(c) - 1, -1, -1):#Сразу считаем значение в x = 10 для получения числа
+        k = i - 1
         q = c[i]
         while k >= 0:
             q *= 10 - k
             k -= 1
         result += q
+    
     return result
 
-Toom_Cook(u, v)
+print(f'Результат работы алгоритма Тоома-Кука: {Toom_Cook(u, v)}') # 3
+print(f'Результат простого умножения: {u * v}')
