@@ -46,16 +46,16 @@ def Toom_Cook(u, v):
     for i in range(len(delta)):
         c.append(delta[i][0])
 
-    result = 0
+    r = 0
     for i in range(len(c) - 1, -1, -1):#Сразу считаем значение в x = 10 для получения числа
         k = i - 1
-        q = c[i]
+        a = c[i]
         while k >= 0:
-            q *= 10 - k
+            a *= 10 - k
             k -= 1
-        result += q
+        r += a
     
-    return result
+    return r
 
 print(f'Результат работы алгоритма Тоома-Кука: {Toom_Cook(u, v)}') # 3
 print(f'Результат простого умножения: {u * v}')
