@@ -4,9 +4,9 @@ v = int(input('Введите второе число: '))
 
 def present(x): # представление в виде x = x1*10^n + x0
     l = []
-    l.append(int(x % (10**(len(str(x))/2))))
-    l.append(int((x - l[0]) // (10**(len(str(x))/2))))
-    l.append(int(len(str(x))/2))
+    l.append(int(x % (10 ** (len(str(x)) / 2))))
+    l.append(int((x - l[0]) // (10 ** (len(str(x)) / 2))))
+    l.append(int(len(str(x)) / 2))
     return l
 
 A = present(u)[1] * present(v)[1]
