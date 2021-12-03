@@ -14,7 +14,6 @@ def pres(a):
         a = a // 10
     return x
 
-
 def Toom_Cook(u, v):
     if len(str(u)) != len(str(v)):
         print('Числа должны быть одинаковой длины!')
@@ -26,11 +25,6 @@ def Toom_Cook(u, v):
     vr = pres(v)
     for x in range(2 * r - 1):
         w.append(value(ur, x) * value(vr, x))
-    print(w)
-
-    #delta= []
-    #for i in range(len(w)):
-        #delta.append([w[i]])
     
     delta = []
     delta.append(w)
@@ -38,7 +32,7 @@ def Toom_Cook(u, v):
 
     max = len(w) - 1
     k = 1
-    for j in range(1, len(w)):#Находим коэфиценты для интерполяционной формулы Ньютона
+    for j in range(1, len(w)): # коэфиценты для интерполяционной формулы Ньютона
         i = 0
         while i < max:
             delta[j].append((delta[j-1][i+1] - delta[j-1][i]) // k)
