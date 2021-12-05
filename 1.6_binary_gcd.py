@@ -29,7 +29,7 @@ def present(x): # представление в виде x = 2^i + x1
     l.append(int(x1))
     return l
 
-def binary_gcd(a, b):
+def binary_gcd_func(a, b):
     k = min(present(a)[0], present(b)[0]) # 2
     a = present(a)[1]
     b = present(b)[1]
@@ -46,13 +46,13 @@ def test():
     print('Начало тестов.')
     for i in range(600, 639):
         for j in range(i-1, i+3):
-            if binary_gcd(i, j) != gcd(i, j):
-                print(f'Ошибка! {gcd(i, j)} не равно {binary_gcd(i, j)} на числе i = {i}')
+            if binary_gcd_func(i, j) != gcd(i, j):
+                print(f'Ошибка! {gcd(i, j)} не равно {binary_gcd_func(i, j)} на числе i = {i}')
                 exit()
             '''else:
                 print(f'i = {i}, j = {j} - успех!')'''
     print('Тесты успешно пройдены!')
 
-print(f'Результат бинарного алгоритма: {binary_gcd(a, b)}') # 4
+print(f'Результат бинарного алгоритма: {binary_gcd_func(a, b)}') # 4
 test()
 
