@@ -1,6 +1,7 @@
 m = int(input('Введите m: '))
 x = int(input('Введите x: '))
 y = int(input('Введите y: '))
+k = int(input('Введите k: '))
 
 def gcd_extended(a, b):
     if a == 0:
@@ -16,9 +17,7 @@ def modinv(a, m):
     else:
         return x % m
 
-def mp(x, y, m):
-    k = len(str(m))
-
+def mp(x, y, m, k):
     m1 = -modinv(m, 10)
     while m1 < 0:
         m1 += 10
@@ -34,7 +33,10 @@ def mp(x, y, m):
 
     return z
 
-print(f'Результат произведения Монтгомери: {mp(x, y, m)}')
-print(f'Результат прямого вычисления: {(x * y * pow(10, -len(str(m)), m)) % m}')
+if x >= m or y >= m:
+    print('Входные условия не выполняются (x >= m или y >= m)')
+else:
+    print(f'Результат произведения Монтгомери: {mp(x, y, m, k)}')
+    print(f'Результат прямого вычисления: {(x * y * pow(10, -len(str(m)), m)) % m}')
     
     
