@@ -3,6 +3,7 @@ x = int(input('Введите x: '))
 y = int(input('Введите y: '))
 k = int(input('Введите k: '))
 
+
 def gcd_extended(a, b):
     if a == 0:
         return (b, 0, 1)
@@ -23,13 +24,20 @@ def mp(x, y, m, k):
         m1 += 10
 
     print(m1)
+
+    x_list = list(map(int, list(str(x))[::-1]))
+    y_list = list(map(int, list(str(y))[::-1]))
+    print(x_list)
+
+
     z = 0
-    for i in range(k - 1, -1, -1):
-        u = ((int(str(z)[0]) + int(str(x)[i])*int(str(y)[k - 1])) * m1) % 10
-        z = int((z + int(str(x)[i]) * y + u * m) / 10)
+    for i in range(k):
+        z_list = list(map(int, list(str(z))[::-1]))
+        u = ((z_list[0] + x_list[i]*y_list[0]) * m1) % 10
+        z = int((z + x_list[i] * y + u * m) / 10)
     
-    if z >= 10:
-        z -= 10
+    if z >= m:
+        z -= m
 
     return z
 

@@ -36,17 +36,21 @@ def rev(x, k):
     return nums
 
 def fft(a, m):
-    k = int(math.log(len(a), 2))
+
+    k = len(a).bit_length() - 1
     n = pow(2, k)
+    if n != len(a):
+        print('Длина входного массива не является степенью двойки.')
+        exit()
 
     if primRoots(m) == []:
         print('Примитивных корней не существует.')
-        exit
+        exit()
     else:
         w = int(input(f'Выберите корень из списка {primRoots(m)}: '))
         if w not in primRoots(m):
             print('Введён не примитивный корень')
-            exit
+            exit()
     
     S = []
     R = []

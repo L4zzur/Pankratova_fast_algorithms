@@ -17,7 +17,7 @@ def pres(a):
 def Toom_Cook(u, v):
     if len(str(u)) != len(str(v)):
         print('Числа должны быть одинаковой длины!')
-        exit
+        exit()
     
     r = len(str(u))
     w = []
